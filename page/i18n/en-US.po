@@ -1,0 +1,5 @@
+msgid "title"
+msgstr "Soundy Boardy"
+
+msgid "notbitch"
+msgstr "example deez nuts"
