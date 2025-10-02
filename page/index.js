@@ -14,6 +14,11 @@ import {
 
 } from "zosLoader:./index.[pf].layout.js";
 
+import { resource } from 'zosLoader:./resource.js'
+hmApp.setScreenMetrics(Styles.WIDTH, Styles.HEIGHT)
+
+// create a player instance
+
 const player = create(id.PLAYER)
 
 Page({
@@ -47,7 +52,7 @@ Page({
       click_func: () => {
         try {
           // path relative to /assets (where your bundled files live)
-          player.setSource(player.source.FILE, { name: 'ding01' })
+          player.setSource(player.source.FILE, { file: resource.sounds.goodJob })
           player.prepare()   // will emit PREPARE -> start()
           console.log('player started')
         } catch (err) {
@@ -64,7 +69,7 @@ Page({
       click_func: () => {
         try {
           // path relative to /assets (where your bundled files live)
-          player.setSource(player.source.FILE, { name: ding01 })
+          player.setSource(player.source.FILE, { file: resource.sounds.ding01 })
           player.prepare()   // will emit PREPARE -> start()
           console.log('player started')
         } catch (err) {
